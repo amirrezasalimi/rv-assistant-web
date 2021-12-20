@@ -33,13 +33,21 @@
     <link rel="manifest" href="manifest.json">
 
 
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+
+    <script src="../build/web/firebase-messaging-sw.js"></script>
+    <script src="../build/web/flutter_service_worker.js"></script>
+
+
 </head>
 <body>
 <!-- This script installs service_worker.js to provide PWA functionality to
      application. For more information, see:
      https://developers.google.com/web/fundamentals/primers/service-workers -->
 <script>
-    var serviceWorkerVersion = '3346925321';
+    var serviceWorkerVersion = '3040187530';
     var scriptLoaded = false;
 
     function loadMainDartJs() {
@@ -59,11 +67,8 @@
             // Wait for registration to finish before dropping the <script> tag.
             // Otherwise, the browser will load the script multiple times,
             // potentially different versions.
-            //  var serviceWorkerUrl = 'flutter_service_worker.js?v=' + serviceWorkerVersion;
-            // navigator.serviceWorker.register(serviceWorkerUrl)
-
-
-            navigator.serviceWorker.register("firebase-messaging-sw.js")
+            var serviceWorkerUrl = 'flutter_service_worker.js?v=' + serviceWorkerVersion;
+            navigator.serviceWorker.register(serviceWorkerUrl)
                 .then((reg) => {
                     function waitForActivation(serviceWorker) {
                         serviceWorker.addEventListener('statechange', () => {
@@ -90,6 +95,7 @@
                         loadMainDartJs();
                     }
                 });
+
             // If service worker doesn't succeed in a reasonable amount of time,
             // fallback to plaint <script> tag.
             setTimeout(() => {
@@ -105,6 +111,21 @@
         // Service workers not supported. Just drop the <script> tag.
         loadMainDartJs();
     }
+</script>
+<!-- Firebase Configuration -->
+<script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyAI6Ne4Oi6JgNYHEWp_MVysLS2X3XQ_jI4",
+        authDomain: "relab-crv.firebaseapp.com",
+        projectId: "relab-crv",
+        storageBucket: "relab-crv.appspot.com",
+        messagingSenderId: "583613066440",
+        appId: "1:583613066440:web:963f524747f965aa9009fd",
+        measurementId: "G-KS5EHT3TRG"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
 </script>
 </body>
 </html>
