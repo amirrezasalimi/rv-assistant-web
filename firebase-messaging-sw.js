@@ -12,7 +12,9 @@ var firebaseConfig = {
     appId: "1:583613066440:web:963f524747f965aa9009fd",
     measurementId: "G-KS5EHT3TRG"
 };
-firebase.initializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+}
 const messaging = firebase.messaging();
 messaging.setBackgroundMessageHandler(function (payload) {
     const promiseChain = clients
