@@ -58,12 +58,14 @@
     };
 
     // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
+    if (!firebase.apps.length) {
+        firebase.initializeApp(firebaseConfig);
+    }
     firebase.analytics();
 
 </script>
 <script>
-    var serviceWorkerVersion = '1339341931';
+    var serviceWorkerVersion = '2035558761';
     var scriptLoaded = false;
 
     function loadMainDartJs() {
