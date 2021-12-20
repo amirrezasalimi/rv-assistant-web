@@ -3,7 +3,7 @@ if (typeof importScripts === "function") {
     importScripts("https://www.gstatic.com/firebasejs/8.6.1/firebase-messaging.js");
     importScripts("https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js");
 }
-if(!firebaseConfig){
+if (typeof firebaseConfig === 'undefined') {
     const firebaseConfig = {
         apiKey: "AIzaSyAI6Ne4Oi6JgNYHEWp_MVysLS2X3XQ_jI4",
         authDomain: "relab-crv.firebaseapp.com",
