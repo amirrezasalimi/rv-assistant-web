@@ -1,11 +1,11 @@
 {
-    "name": "crv_assistance",
-    "short_name": "crv_assistance",
+    "name": "Rv Assistance",
+    "short_name": "Rv Assistance",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "remote viewing assistant app",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
