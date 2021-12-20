@@ -1,15 +1,19 @@
-importScripts("https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js");
-importScripts("https://www.gstatic.com/firebasejs/8.6.1/firebase-messaging.js");
-importScripts("https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js");
-const firebaseConfig = {
-    apiKey: "AIzaSyAI6Ne4Oi6JgNYHEWp_MVysLS2X3XQ_jI4",
-    authDomain: "relab-crv.firebaseapp.com",
-    projectId: "relab-crv",
-    storageBucket: "relab-crv.appspot.com",
-    messagingSenderId: "583613066440",
-    appId: "1:583613066440:web:963f524747f965aa9009fd",
-    measurementId: "G-KS5EHT3TRG"
-};
+if (typeof importScripts === "function") {
+    importScripts("https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js");
+    importScripts("https://www.gstatic.com/firebasejs/8.6.1/firebase-messaging.js");
+    importScripts("https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js");
+}
+if(!firebaseConfig){
+    const firebaseConfig = {
+        apiKey: "AIzaSyAI6Ne4Oi6JgNYHEWp_MVysLS2X3XQ_jI4",
+        authDomain: "relab-crv.firebaseapp.com",
+        projectId: "relab-crv",
+        storageBucket: "relab-crv.appspot.com",
+        messagingSenderId: "583613066440",
+        appId: "1:583613066440:web:963f524747f965aa9009fd",
+        measurementId: "G-KS5EHT3TRG"
+    };
+}
 firebase.initializeApp(firebaseConfig);
 const messaging = firebase.messaging();
 messaging.setBackgroundMessageHandler(function (payload) {
