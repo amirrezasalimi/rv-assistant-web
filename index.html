@@ -38,7 +38,9 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
 
     <script src="firebase-messaging-sw.js"></script>
+<!--
     <script src="flutter_service_worker.js"></script>
+-->
 
 
 </head>
@@ -47,6 +49,7 @@
      application. For more information, see:
      https://developers.google.com/web/fundamentals/primers/service-workers -->
 <script>
+    <!-- Firebase Configuration -->
     var firebaseConfig = {
         apiKey: "AIzaSyAI6Ne4Oi6JgNYHEWp_MVysLS2X3XQ_jI4",
         authDomain: "relab-crv.firebaseapp.com",
@@ -65,7 +68,7 @@
 
 </script>
 <script>
-    var serviceWorkerVersion = '2035558761';
+    var serviceWorkerVersion = '1890220064';
     var scriptLoaded = false;
 
     function loadMainDartJs() {
@@ -132,9 +135,5 @@
         loadMainDartJs();
     }
 </script>
-<!-- Firebase Configuration -->
-
-
-
 </body>
 </html>
